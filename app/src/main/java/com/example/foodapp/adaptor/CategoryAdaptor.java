@@ -19,10 +19,10 @@ import java.util.ArrayList;
 
 public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.ViewHolder> {
 
-    ArrayList<CategoryDomain> categoryDomains;
+    ArrayList<CategoryDomain> categoryFood;
 
-    public CategoryAdaptor(ArrayList<CategoryDomain> categoryDomains) {
-        this.categoryDomains = categoryDomains;
+    public CategoryAdaptor(ArrayList<CategoryDomain> categoryFood) {
+        this.categoryFood = categoryFood;
     }
 
     @NonNull
@@ -34,7 +34,7 @@ public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(categoryDomains.get(position).getTitle());
+        holder.categoryName.setText(categoryFood.get(position).getTitle());
         String picUrl = "";
         switch (position){
             case 0:{
@@ -72,7 +72,7 @@ public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.ViewHo
 
     @Override
     public int getItemCount() {
-        return categoryDomains.size();
+        return categoryFood.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
