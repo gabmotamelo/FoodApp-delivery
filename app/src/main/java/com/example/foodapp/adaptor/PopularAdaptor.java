@@ -1,5 +1,6 @@
 package com.example.foodapp.adaptor;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodapp.R;
+import com.example.foodapp.activity.ShowDetailActivity;
 import com.example.foodapp.domain.FoodDomain;
 
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PopularAdaptor.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PopularAdaptor.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(popularFood.get(position).getTitle());
         holder.fee.setText(String.valueOf(popularFood.get(position).getFee()));
 
@@ -42,7 +44,14 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
-
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                intent.putExtra("object", popularFood.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
