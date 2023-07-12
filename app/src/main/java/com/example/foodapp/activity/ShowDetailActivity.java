@@ -70,13 +70,13 @@ public class ShowDetailActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        addToCartBtn=findViewById(R.id.addToCartBtn);
-        titleTxt=findViewById(R.id.titleTxt);
-        feeTxt=findViewById(R.id.priceTxt);
-        descriptionTxt=findViewById(R.id.descriptionTxt);
-        numberOrderTxt=findViewById(R.id.numberOrderTxt);
-        plusBtn=findViewById(R.id.plusBtn);
-        minusBtn=findViewById(R.id.minusBtn);
-        picFood=findViewById(R.id.picFood);
+        addToCartBtn = findViewById(R.id.addToCartBtn);
+        titleTxt = findViewById(R.id.titleTxt);
+        feeTxt = findViewById(R.id.priceTxt);
+        descriptionTxt = findViewById(R.id.descriptionTxt);
+        numberOrderTxt = findViewById(R.id.numberOrderTxt);
+        plusBtn = findViewById(R.id.plusBtn);
+        minusBtn = findViewById(R.id.minusBtn);
+        picFood = findViewById(R.id.picFood);
     }
 }
